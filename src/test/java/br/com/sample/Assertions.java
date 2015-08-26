@@ -10,7 +10,6 @@ import org.junit.Test;
 import br.com.sample.dao.PersonDAO;
 import br.com.sample.dao.UserDAO;
 import br.com.sample.entities.Person;
-import br.com.sample.entities.User;
 import br.com.sample.query.PersonQuery;
 
 public class Assertions {
@@ -25,16 +24,6 @@ public class Assertions {
 	public void selectByName() throws Exception {
 		PersonDAO dao = QueryBuilder.create(PersonDAO.class);
 		assertEquals(1, dao.getPersonByName("Willian").size());
-	}
-	
-	@Test
-	public void queryByExample() throws Exception {
-		UserDAO dao = QueryBuilder.create(UserDAO.class);
-		Person person = new Person(1);
-		User example = new User(1);
-		example.setPerson(person);
-
-		assertEquals(1, dao.queryByExample(example).size());
 	}
 	
 	@Test

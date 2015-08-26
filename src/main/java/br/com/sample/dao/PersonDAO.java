@@ -2,14 +2,15 @@ package br.com.sample.dao;
 
 import java.util.Collection;
 
-import org.esfinge.querybuilder.Repository;
+import org.esfinge.querybuilder.annotation.QueryBuilder;
 import org.esfinge.querybuilder.annotation.QueryObject;
 import org.esfinge.querybuilder.annotation.Starts;
 
 import br.com.sample.entities.Person;
 import br.com.sample.query.PersonQuery;
 
-public interface PersonDAO extends Repository<Person> {
+@QueryBuilder
+public interface PersonDAO {
 	
 	public Collection<Person> getPerson();
 	public Collection<Person> getPersonOrderByName();
